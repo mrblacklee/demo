@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry
+            location="E:/maven/repo/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar" />
+    <context id="my" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+            <property name="suppressAllComments" value="false" />
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/tedu_store?useUnicode=true&amp;characterEncoding=utf8"
+                        userId="root" password="123456" />
+
+        <javaModelGenerator targetPackage="cn.tedu.store.domain"
+                            targetProject="D:\store\src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="D:\store\src\main\resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="cn.tedu.store.dao"
+                             targetProject="D:\store\src\main\java"
+                             type="XMLMAPPER">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!--<table tableName="T_FEE_AGTBILL" domainObjectName="FeeAgentBill" enableCountByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false"/> -->
+
+        <table tableName="t_address" domainObjectName="T_address"
+               mapperName="T_addressDao" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true" />
+        </table>
+        <table tableName="t_dict_areas" domainObjectName="T_dict_areas"
+               mapperName="T_dict_areasDao" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true" />
+        </table>
+        <table tableName="t_dict_cities" domainObjectName="T_dict_cities"
+               mapperName="T_dict_citiesDao" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true" />
+        </table>
+        <table tableName="t_dict_provinces" domainObjectName="T_dict_provinces"
+               mapperName="T_dict_provincesDao" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true" />
+        </table>
+        <table tableName="t_goods" domainObjectName="T_goods"
+               mapperName="T_goodsDao" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true" />
+        </table>
+
+        <table tableName="t_user" domainObjectName="T_user"
+               mapperName="T_userDao" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true" />
+        </table>
+
+    </context>
+</generatorConfiguration>
